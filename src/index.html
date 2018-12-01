@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="public/css/foundation.min.css" />
+    <link rel="stylesheet" href="public/css/app.css" />
+    <title>branchNameGenerator</title>
+  </head>
+  <body>
+    <main class="page__wrapper">
+      <div data-branch-name-generator data-live-validate="true">
+        <div class="content__wrapper">
+          <h1 class="wrapper__title">branchNameGenerator</h1>
+          <form class="grid-container" data-form>
+            <div class="grid-x grid-padding-x">
+              <div class="cell small-12">
+                <label>Project</label>
+                <fieldset class="radio-switch">
+                  <input
+                    type="radio"
+                    class="custom-radio-control show-for-sr"
+                    name="project"
+                    value="SJDEV"
+                    id="project_sjdev"
+                    checked
+                  /><label for="project_sjdev">SJDEV</label>
+                  <input
+                    type="radio"
+                    class="custom-radio-control show-for-sr"
+                    name="project"
+                    value="MT"
+                    id="project_mt"
+                  /><label for="project_mt">MT</label>
+                </fieldset>
+              </div>
+              <div class="cell small-6">
+                <label
+                  >Ticket Number
+                  <input
+                    type="number"
+                    name="ticket_number"
+                    placeholder="1600"
+                  />
+                </label>
+              </div>
+              <div class="cell small-6">
+                <label
+                  >Type
+                  <select name="ticket_type">
+                    <option value="task">task</option>
+                    <option value="hotfix">hotfix</option>
+                    <option value="bug">bug</option>
+                    <option value="feature">feature</option>
+                  </select>
+                </label>
+              </div>
+              <div class="cell small-12">
+                <label
+                  >Description
+                  <input
+                    type="text"
+                    name="description"
+                    aria-describedby="descriptionHelpText"
+                  />
+                </label>
+                <p class="help-text" id="descriptionHelpText">
+                  Enter some keywords that describe your ticket
+                </p>
+              </div>
+            </div>
+          </form>
+          <div
+            class="output__wrapper"
+            data-output-area
+            data-clipboard-text="SJDEV_XXX_task_xxx"
+          >
+            SJDEV_XXX_task_xxx
+          </div>
+          <p class="success-msg" data-success-msg>Copied to clipboard!</p>
+        </div>
+      </div>
+    </main>
+    <script>
+      window.$ = window.jQuery = require("jquery");
+    </script>
+    <script>
+      require("./public/js/app.js");
+    </script>
+  </body>
+</html>
